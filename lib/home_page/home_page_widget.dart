@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../components/filterbut_widget.dart';
 import '../components/profileimage_widget.dart';
 import '../components/restaurantcard_widget.dart';
@@ -84,7 +85,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       padding: EdgeInsets.zero,
                       scrollDirection: Axis.vertical,
                       children: [
-                        RestaurantcardWidget(),
+                        FutureBuilder<ApiCallResponse>(
+                          future: HomemostpopjustopenCall.call(),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 25,
+                                  height: 25,
+                                  child: SpinKitChasingDots(
+                                    color: FlutterFlowTheme.primaryColor,
+                                    size: 25,
+                                  ),
+                                ),
+                              );
+                            }
+                            final restaurantcardHomemostpopjustopenResponse =
+                                snapshot.data;
+                            return RestaurantcardWidget();
+                          },
+                        ),
                       ],
                     ),
                   ),
