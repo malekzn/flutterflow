@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 // ignore: avoid_classes_with_only_static_members
 class FlutterFlowTheme {
   static const Color primaryColor = Color(0xFF36A9E1);
-  static const Color secondaryColor = Color(0xFFE71D73);
+  static const Color secondaryColor = Color(0xFF95C11F);
   static const Color tertiaryColor = Color(0xFFFFFFFF);
 
   static const Color unselected = Color(0xFF8E8E8E);
