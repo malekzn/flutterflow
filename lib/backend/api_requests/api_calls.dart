@@ -8,8 +8,7 @@ class GetRestaurantCall {
   static Future<ApiCallResponse> call() {
     return ApiManager.instance.makeApiCall(
       callName: 'getRestaurant',
-      apiUrl:
-          'https://yandestek.nbsventure.com/api/v1.1/Profile/GetCategoriesWithSkills',
+      apiUrl: 'https://reqres.in/api/users?page=2',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

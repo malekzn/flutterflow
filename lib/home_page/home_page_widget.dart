@@ -100,7 +100,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         builder: (context) {
                           final restaurantList = getJsonField(
                                 listViewGetRestaurantResponse.jsonBody,
-                                r'''$.data.most_popular''',
+                                r'''$.data''',
                               )?.toList() ??
                               [];
                           return ListView.builder(
