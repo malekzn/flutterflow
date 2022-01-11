@@ -1,7 +1,6 @@
 import '../backend/api_requests/api_calls.dart';
 import '../components/filterbut_widget.dart';
 import '../components/profileimage_widget.dart';
-import '../components/restaurantcard_widget.dart';
 import '../components/search_widget.dart';
 import '../components/sortbut_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -110,7 +109,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             itemBuilder: (context, restaurantListIndex) {
                               final restaurantListItem =
                                   restaurantList[restaurantListIndex];
-                              return RestaurantcardWidget();
+                              return Text(
+                                'Hello World',
+                                style: FlutterFlowTheme.bodyText1,
+                              );
                             },
                           );
                         },
