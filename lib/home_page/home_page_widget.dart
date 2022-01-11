@@ -79,35 +79,43 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        FutureBuilder<ApiCallResponse>(
-                          future: HomemostpopjustopenCall.call(),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: SpinKitChasingDots(
-                                    color: FlutterFlowTheme.primaryColor,
-                                    size: 25,
-                                  ),
-                                ),
-                              );
-                            }
-                            final restaurantcardHomemostpopjustopenResponse =
-                                snapshot.data;
-                            return RestaurantcardWidget();
-                          },
-                        ),
-                      ],
-                    ),
+                  child: FutureBuilder<ApiCallResponse>(
+                    future: GetRestaurantCall.call(),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 25,
+                            height: 25,
+                            child: SpinKitChasingDots(
+                              color: FlutterFlowTheme.primaryColor,
+                              size: 25,
+                            ),
+                          ),
+                        );
+                      }
+                      final listViewGetRestaurantResponse = snapshot.data;
+                      return Builder(
+                        builder: (context) {
+                          final restaurantList = getJsonField(
+                                listViewGetRestaurantResponse.jsonBody,
+                                r'''$[*]''',
+                              )?.toList() ??
+                              [];
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            scrollDirection: Axis.vertical,
+                            itemCount: restaurantList.length,
+                            itemBuilder: (context, restaurantListIndex) {
+                              final restaurantListItem =
+                                  restaurantList[restaurantListIndex];
+                              return RestaurantcardWidget();
+                            },
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ],

@@ -4,14 +4,16 @@ import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
-class HomemostpopjustopenCall {
+class GetRestaurantCall {
   static Future<ApiCallResponse> call() {
     return ApiManager.instance.makeApiCall(
-      callName: 'homemostpopjustopen',
-      apiUrl: 'https://alphameal-test.azurewebsites.net/customer',
-      callType: ApiCallType.GET,
+      callName: 'getRestaurant',
+      apiUrl:
+          'https://alphameal-test.azurewebsites.net/API/v1/customer/home_mostpop_justopen.php',
+      callType: ApiCallType.POST,
       headers: {},
       params: {},
+      bodyType: BodyType.JSON,
       returnBody: true,
     );
   }
