@@ -110,7 +110,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               final restaurantListItem =
                                   restaurantList[restaurantListIndex];
                               return Text(
-                                'Hello World',
+                                getJsonField(
+                                  restaurantListItem,
+                                  r'''$email''',
+                                ).toString(),
                                 style: FlutterFlowTheme.bodyText1,
                               );
                             },
