@@ -11,7 +11,10 @@ class GetRestaurantCall {
       apiUrl:
           'https://alphameal-test.azurewebsites.net/API/v1/customer/home_mostpop_justopen.php',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        ' accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
       params: {},
       returnBody: true,
     );
