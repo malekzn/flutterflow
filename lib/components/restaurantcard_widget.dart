@@ -6,7 +6,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RestaurantcardWidget extends StatefulWidget {
-  const RestaurantcardWidget({Key key}) : super(key: key);
+  const RestaurantcardWidget({
+    Key key,
+    this.object,
+  }) : super(key: key);
+
+  final dynamic object;
 
   @override
   _RestaurantcardWidgetState createState() => _RestaurantcardWidgetState();
@@ -68,7 +73,10 @@ class _RestaurantcardWidgetState extends State<RestaurantcardWidget> {
                   ],
                 ),
                 Text(
-                  'Pizza Hut',
+                  getJsonField(
+                    widget.object,
+                    r'''$first_name''',
+                  ).toString(),
                   style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Proxima Nova',
                     color: Colors.black,
@@ -77,7 +85,10 @@ class _RestaurantcardWidgetState extends State<RestaurantcardWidget> {
                   ),
                 ),
                 Text(
-                  'Parliament St, Westminster, London',
+                  getJsonField(
+                    widget.object,
+                    r'''$email''',
+                  ).toString(),
                   style: FlutterFlowTheme.bodyText2,
                 ),
               ],
