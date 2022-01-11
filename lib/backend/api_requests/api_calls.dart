@@ -10,10 +10,9 @@ class GetRestaurantCall {
       callName: 'getRestaurant',
       apiUrl:
           'https://alphameal-test.azurewebsites.net/API/v1/customer/home_mostpop_justopen.php',
-      callType: ApiCallType.POST,
+      callType: ApiCallType.GET,
       headers: {},
       params: {},
-      bodyType: BodyType.NONE,
       returnBody: true,
     );
   }
