@@ -13,7 +13,7 @@ class GetRestaurantCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      bodyType: BodyType.JSON,
+      bodyType: BodyType.NONE,
       returnBody: true,
     );
   }
