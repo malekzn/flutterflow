@@ -42,7 +42,10 @@ class _RestaurantcardWidgetState extends State<RestaurantcardWidget> {
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.network(
-                'https://picsum.photos/seed/887/600',
+                getJsonField(
+                  widget.object,
+                  r'''$avatar''',
+                ),
                 width: 65,
                 height: 60,
                 fit: BoxFit.cover,
