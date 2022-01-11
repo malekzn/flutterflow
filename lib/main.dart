@@ -8,8 +8,12 @@ import 'home_page/home_page_widget.dart';
 import 'mappage/mappage_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 void main() async {
+  // Initialize FFAppState.
+  FFAppState();
+
   runApp(MyApp());
 }
 

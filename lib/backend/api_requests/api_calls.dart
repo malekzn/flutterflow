@@ -9,14 +9,10 @@ class GetRestaurantCall {
     return ApiManager.instance.makeApiCall(
       callName: 'getRestaurant',
       apiUrl:
-          'https://alphameal-test.azurewebsites.net/API/v1/customer/home_mostpop_justopen.php',
-      callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        'accept': 'application/json',
-      },
+          'https://yandestek.nbsventure.com/api/v1.1/Profile/GetCategoriesWithSkills',
+      callType: ApiCallType.GET,
+      headers: {},
       params: {},
-      bodyType: BodyType.NONE,
       returnBody: true,
     );
   }
